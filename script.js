@@ -62,11 +62,27 @@ class Particle {
 }
 function animate() {
     ctx.clearRect(0,0, canvas.width,canvas.height);
-    particles.forEach(part => {
-        part.update();
-        part.draw();
-
-    });
+    for (let i= 0; i<particles.length;i++){
+        particles[i].update();
+        particles[i].draw();
+        if (particles[i].size<0.2){
+            particles.splice(i,1);
+            i--;
+        }
+    }
+    ctx.fillStyle ="rgb(71, 23, 14,0.2)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fill();
+    ctx.fillStyle="white"
+    ctx.lineWidth =1;
+    ctx.font = "25px arial";
+    ctx.fillText("Hello, I'm Aakash",(canvas.width/2)-100,canvas.height/10);
+    ctx.fill();
+    ctx.fillStyle="white"
+    ctx.lineWidth =1;
+    ctx.font = "25px arial";
+    ctx.fillText("Click/Move Mouse",(canvas.width/2)-100,canvas.height-25);
+    ctx.fill();
 
     requestAnimationFrame(animate);
 }
