@@ -21,6 +21,14 @@ canvas.addEventListener("mousemove", function(e){
     }
 
 })
+canvas.addEventListener("touchmove", function(e){
+    mouse.x = e.x;
+    mouse.y = e.y;
+    for (let i = 0; i<5; i++ ){
+        particles.push(new Particle());
+    }
+
+})
 canvas.addEventListener("click", function(e){
     mouse.x = e.x;
     mouse.y = e.y;
