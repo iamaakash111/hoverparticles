@@ -22,12 +22,12 @@ canvas.addEventListener("mousemove", function(e){
 
 })
 canvas.addEventListener("touchmove", function(e){
-    mouse.x = e.pageX;
-    mouse.y = e.pageY;
-    for (let i = 0; i<5; i++ ){
+    mouse.x = e.touches[0].screenX;
+    mouse.y = e.touches[0].screenY;
+    for (let i = 0; i<10; i++ ){
         particles.push(new Particle());
     }
-
+    
 })
 canvas.addEventListener("click", function(e){
     mouse.x = e.x;
