@@ -22,8 +22,8 @@ canvas.addEventListener("mousemove", function(e){
 
 })
 canvas.addEventListener("touchmove", function(e){
-    mouse.x = e.x;
-    mouse.y = e.y;
+    mouse.x = e.pageX;
+    mouse.y = e.pageY;
     for (let i = 0; i<5; i++ ){
         particles.push(new Particle());
     }
