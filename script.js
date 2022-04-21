@@ -42,7 +42,7 @@ class Particle {
     constructor(){
         this.x = mouse.x;
         this.y = mouse.y;
-        this.size = Math.random()*10 + 1;
+        this.size = Math.random()*25 + 1;
         this.speedX = Math.random()*4 - 2; 
         this.speedY = Math.random()*4 - 2;
         this.colorA = Math.random()*255 +1 ; 
